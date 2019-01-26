@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="LoginViewModel.fs" />
+    <EmbeddedResource Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="LoginPage.xaml.fs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="App.xaml" />
+    <Compile Include="App.xaml.fs">
+      <DependentUpon>..\FsharpMvvmCross\App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <PackageReference Include="FSharp.Core" Version="4.6.0" />
+    <PackageReference Include="MvvmCross.Forms" Version="6.2.1" />
+    <Compile Include="AssemblyInfo.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sample.Core\Sample.Core.fsproj" />
+  </ItemGroup>
+</Project>
